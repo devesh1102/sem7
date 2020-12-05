@@ -1,0 +1,28 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="try1_lib:cell_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+TLIN:TL1  N__1 N__12 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL2  N__2 N__3 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL3  N__4 N__5 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL4  N__6 N__7 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL5  N__12 N__7 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL6  N__2 N__4 Z=50.0 Ohm E=90 F=5.4 GHz 
+TLIN:TL7  N__12 N__2 Z=36.36 Ohm E=90 F=5.4 GHz 
+TLIN:TL8  N__7 N__4 Z=36.36 Ohm E=90 F=5.4 GHz 
+Port:Term1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__5 0 Num=2 Z=50 Ohm Noise=yes 
+Port:Term3  N__1 0 Num=3 Z=50 Ohm Noise=yes 
+Port:Term4  N__6 0 Num=4 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=4 GHz Stop=7 GHz Step=10 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2

@@ -1,0 +1,3 @@
+projectDir = '"~/simulation"
+designInfo = '("OTA_CHARACTERIZATION" "TB_CLOSED_LOOP_TRANSIENT" "schematic" "spectre")
+descriptionText = "None"
